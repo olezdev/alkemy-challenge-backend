@@ -1,0 +1,7 @@
+POST https://localhost:7077/token
+Content-Type: application/json
+
+{
+    "userName": "test.jwt",
+    "password": "P@ss.W0rd"
+}

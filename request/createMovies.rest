@@ -1,0 +1,22 @@
+POST https://localhost:7077/movie
+content-type: application/json
+
+{
+  "image": "https://commons.wikimedia.org/wiki/File:Iron_Man_-_2008_movie_logo.svg",
+  "Title": "Iron Man: el hombre de hierro",
+  "Year": 2008,
+  "Rating": 4
+}
+
+###
+
+POST https://localhost:7077/movie
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI5YWZjOGFkMC05YzQ2LTQ2ODctOGZmYy0zZjJlYTA2ZTNkNzQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdC5qd3QiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9naXZlbm5hbWUiOiJUZXN0IFVzZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiQWRtaW4iLCJBbm90aGVyUm9sZSJdLCJleHAiOjE2NTkzMzc0MzIsImlzcyI6IkFsa2VteUNoYWxsZW5nZUJhY2tlbmQiLCJhdWQiOiJsb2NhbGhvc3QifQ.HK3Tih7w4_QZtaI5I3gN7NMe-kPlRCOAWwRB-VTdiqM
+
+{
+  "image": "test",
+  "Title": "test",
+  "Year": 2008,
+  "Rating": 3
+}

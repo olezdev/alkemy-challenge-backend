@@ -1,0 +1,1 @@
+https://localhost:7077/characters?name=Christopher Hemsworth
