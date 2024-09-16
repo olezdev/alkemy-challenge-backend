@@ -65,7 +65,7 @@ Para especificar el término de búsqueda o filtros se deberán enviar como par�
 #### 7. Listado de Películas
 Deberá mostrar solamente los campos imagen, título y fecha de creación.
 El endpoint deberá ser:
-● GET /movies
+- GET /movies
 
 #### 8. Detalle de Película / Serie con sus personajes
 Devolverá todos los campos de la película o serie junto a los personajes asociados a la misma
