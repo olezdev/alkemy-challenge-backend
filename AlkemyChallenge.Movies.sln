@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "old", "old\alkemy-challenge-backend.csproj", "{71EB5712-41F0-40FB-965A-45B447D61777}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6244C4BB-8C55-4E5E-93F1-0D560C03ADA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E04C2B68-2E7A-4C27-82D9-9A70A5EFFCE0}"
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{71EB5712-41F0-40FB-965A-45B447D61777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71EB5712-41F0-40FB-965A-45B447D61777}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71EB5712-41F0-40FB-965A-45B447D61777}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71EB5712-41F0-40FB-965A-45B447D61777}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A96E42B4-ECDE-4850-BAE4-6DECC5289864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A96E42B4-ECDE-4850-BAE4-6DECC5289864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96E42B4-ECDE-4850-BAE4-6DECC5289864}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,7 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{71EB5712-41F0-40FB-965A-45B447D61777} = {77416D13-AC01-49D9-824D-E9D382436566}
 		{A96E42B4-ECDE-4850-BAE4-6DECC5289864} = {77416D13-AC01-49D9-824D-E9D382436566}
 		{77416D13-AC01-49D9-824D-E9D382436566} = {6244C4BB-8C55-4E5E-93F1-0D560C03ADA3}
 		{F75933BA-E3AA-4351-AB8F-9B76BB7ABA93} = {6244C4BB-8C55-4E5E-93F1-0D560C03ADA3}
