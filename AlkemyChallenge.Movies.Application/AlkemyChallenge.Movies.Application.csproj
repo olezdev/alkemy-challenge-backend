@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Characters\" />
+    <Folder Include="Features\Characters\Commands\" />
     <Folder Include="Features\Movies\Commands\" />
   </ItemGroup>
 

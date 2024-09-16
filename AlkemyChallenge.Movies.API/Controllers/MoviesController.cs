@@ -1,4 +1,5 @@
-﻿using AlkemyChallenge.Movies.Application.Features.Movies.Queries;
+﻿using AlkemyChallenge.Movies.Application.Features.Characters.Queries;
+using AlkemyChallenge.Movies.Application.Features.Movies.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ public class MoviesController : ControllerBase
     }
 
     [HttpGet(Name = "GetMovies")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<MoviesResponse>))]
     public async Task<ActionResult<List<GetMoviesQuery>>> GetAll()
     {
         var response = await _mediator.Send(new GetMoviesQuery());
@@ -25,6 +26,7 @@ public class MoviesController : ControllerBase
     }
 
     [HttpGet("{id}", Name = "GetMovieById")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<MovieResponse>))]
     public async Task<ActionResult<MovieResponse>> GetMovieById(int id)
     {
         var getMovieDetailQuery = new GetMovieByIdQuery() { Id = id };
