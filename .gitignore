@@ -483,3 +483,9 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 /appsettings.Development.json
+/AlkemyChallenge.Movies.API/appsettings.Development.json
+/AlkemyChallenge.Movies.Persistence/Migrations
+/old/Migrations
+/old/request
+/old/AlkemyMovie.db
+/old/Identity.db
