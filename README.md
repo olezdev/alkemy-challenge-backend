@@ -42,10 +42,7 @@ Los endpoints encargados de la autenticación deberán ser:
 - /auth/register
 
 #### 3. Listado de Personajes
-
-- Imagen.
-- Nombre.
-El endpoint deberá ser:
+Imagen, Nombre. El endpoint deberá ser:
 - /characters
 
 ####  4. Creación, Edición y Eliminación de Personajes (CRUD)
