@@ -7,8 +7,14 @@ public interface IAsyncRepository<T> where T : class
     Task<T> GetByIdAsync(int id);
     Task<TDto?> GetByIdProjectToAsync<TDto>(int id, IConfigurationProvider configuration) where TDto : class;
     Task<IReadOnlyList<T>> ListAllAsync();
-    Task<IReadOnlyList<TDto>> ListAllAsync<TDto>(IConfigurationProvider configuration);
-    IQueryable<T> GetAll();
+    Task<IReadOnlyList<TDto>> ProjectToListAsync<TDto>(
+        IConfigurationProvider configuration);
+    IQueryable<T> GetQueryable();
+    Task<IReadOnlyList<TDto>> ProjectToListAsync<TDto>(
+        IQueryable<T> query,
+        IConfigurationProvider configuration,
+        CancellationToken cancellationToken = default);
+
     Task<T> AddAsync(T entity);
     Task UpdateAsync(T entity);
     Task DeleteAsync(T entity);

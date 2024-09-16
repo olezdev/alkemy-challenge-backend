@@ -34,7 +34,7 @@ public class GetMoviesQueryHandler : IRequestHandler<GetMoviesQuery, List<Movies
 
     public async Task<List<MoviesResponse>> Handle(GetMoviesQuery request, CancellationToken cancellationToken)
     {
-        var movies = await _repository.ListAllAsync<MoviesResponse>(_mapper.ConfigurationProvider);
+        var movies = await _repository.ProjectToListAsync<MoviesResponse>(_mapper.ConfigurationProvider);
         return movies.ToList();
     }
 }
