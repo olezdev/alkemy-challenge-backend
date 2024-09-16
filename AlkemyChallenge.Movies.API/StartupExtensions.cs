@@ -11,8 +11,6 @@ public static class StartupExtensions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddPersistenceServices(builder.Configuration);
-        //builder.Services.AddIdentityServices(builder.Configuration);
-        //builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddApplicationServices();
 
         builder.Services.AddSwagger();
@@ -78,7 +76,7 @@ public static class StartupExtensions
             c.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
-                Title = "Indicadores Datos API"
+                Title = "Alkemy Challenge Movies API"
             });
 
             c.OperationFilter<SwaggerAuthorizeCheckOperationFilter>();
