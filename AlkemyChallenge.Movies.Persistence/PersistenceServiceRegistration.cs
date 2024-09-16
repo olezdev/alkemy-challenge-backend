@@ -17,6 +17,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
         services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<ICharacterRepository, CharacterRepository>();
 
 
         return services;
