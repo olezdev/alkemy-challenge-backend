@@ -17,10 +17,17 @@ public class CharactersController : ControllerBase
 
     [HttpGet(Name = "GetCharacters")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<CharactersResponse>))]
-    public async Task<ActionResult<List<GetCharactersQuery>>> GetAll()
+    public async Task<IActionResult> GetCharacters([FromQuery] string? name, [FromQuery] int? age, [FromQuery] int? movieId)
     {
-        var response = await _mediator.Send(new GetCharactersQuery());
-        return Ok(response);
+        var query = new GetCharactersQuery
+        {
+            Name = name,
+            Age = age,
+            MovieId = movieId
+        };
+
+        var characters = await _mediator.Send(query);
+        return Ok(characters);
     }
 
     [HttpGet("{id}", Name = "GetCharacterById")]

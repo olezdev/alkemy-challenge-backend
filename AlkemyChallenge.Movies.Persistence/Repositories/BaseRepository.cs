@@ -41,16 +41,26 @@ public class BaseRepository<T> : IAsyncRepository<T> where T : class, IEntity
         return await _dbContext.Set<T>().ToListAsync();
     }
 
-    public async Task<IReadOnlyList<TDto>> ListAllAsync<TDto>(IConfigurationProvider configuration)
+    public async Task<IReadOnlyList<TDto>> ProjectToListAsync<TDto>(IConfigurationProvider configuration)
     {
         return await _dbContext.Set<T>()
             .ProjectTo<TDto>(configuration)
             .ToListAsync();
     }
 
-    public IQueryable<T> GetAll()
+    public IQueryable<T> GetQueryable()
     {
-        return _dbContext.Set<T>().AsNoTracking();
+        return _dbContext.Set<T>().AsQueryable();
+    }
+
+    public async Task<IReadOnlyList<TDto>> ProjectToListAsync<TDto>(
+        IQueryable<T> query,
+        IConfigurationProvider configuration,
+        CancellationToken cancellationToken = default)
+    {
+        return await query
+            .ProjectTo<TDto>(configuration)
+            .ToListAsync(cancellationToken);
     }
 
     public async Task<T> AddAsync(T entity)

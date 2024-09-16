@@ -7,6 +7,9 @@ namespace AlkemyChallenge.Movies.Application.Features.Characters.Queries;
 
 public class GetCharactersQuery : IRequest<List<CharactersResponse>>
 {
+    public string? Name { get; set; }
+    public int? Age { get; set; }
+    public int? MovieId { get; set; }
 }
 
 public class CharactersResponse
@@ -32,7 +35,28 @@ public class GetCharactersQueryHandler : IRequestHandler<GetCharactersQuery, Lis
 
     public async Task<List<CharactersResponse>> Handle(GetCharactersQuery request, CancellationToken cancellationToken)
     {
-        var characters = await _repository.ListAllAsync<CharactersResponse>(_mapper.ConfigurationProvider);
+        var query = _repository.GetQueryable();
+
+        if (!string.IsNullOrEmpty(request.Name))
+        {
+            query = query.Where(c => c.Name.Contains(request.Name));
+        }
+
+        if (request.Age.HasValue)
+        {
+            query = query.Where(c => c.Age == request.Age);
+        }
+
+        if (request.MovieId.HasValue)
+        {
+            query = query.Where(c => c.Movies.Any(m => m.Id == request.MovieId));
+        }
+
+        var characters = await _repository.ProjectToListAsync<CharactersResponse>(
+            query, 
+            _mapper.ConfigurationProvider, 
+            cancellationToken);
+
         return characters.ToList();
     }
 }
