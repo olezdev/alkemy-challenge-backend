@@ -15,23 +15,23 @@ exponer la información para que cualquier frontend pueda consumirla.
 supuesto, mientras más completes, mayor puntaje obtendrás.
 
 #### 1. Modelado de Base de Datos
-**Personaje:**
+##### **Personaje:**
 - Imagen.
 - Nombre.
 - Edad.
 - Peso.
 - Historia.
 - Películas o series asociadas.
-**Película o Serie:**
+##### **Película o Serie:**
 - Imagen.
 - Título.
 - Fecha de creación.
 - Calificación (del 1 al 5).
 - Personajes asociados.
-**Género:**
+##### **Género:**
 - Nombre.
 - Imagen.
-**Películas o series asociadas.**
+##### **Películas o series asociadas.**
 
 #### 2. Autenticación de Usuarios
 Para realizar peticiones a los endpoints subsiguientes el usuario deberá contar con un token que
