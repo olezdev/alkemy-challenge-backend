@@ -1,4 +1,5 @@
-﻿using AlkemyChallenge.Movies.Application.Features.Characters.Queries;
+﻿using AlkemyChallenge.Movies.Application.Features.Characters.Commands;
+using AlkemyChallenge.Movies.Application.Features.Characters.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,5 +37,34 @@ public class CharactersController : ControllerBase
     {
         var getCharacterDetailQuery = new GetCharacterByIdQuery() { Id = id };
         return Ok(await _mediator.Send(getCharacterDetailQuery));
+    }
+
+    [HttpPost(Name = "AddCharacter")]
+    [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(int))]
+    public async Task<ActionResult<int>> AddCharacter(CreateCharacterCommand command)
+    {
+        return CreatedAtRoute("GetCharacterById", new { id = await _mediator.Send(command) }, command);
+    }
+
+    [HttpPut("{id}", Name = "UpdateCharacter")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> UpdateCharacter(int id, UpdateCharacterCommand command)
+    {
+        if (id != command.Id)
+        {
+            return BadRequest();
+        }
+
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("{id}", Name = "DeleteCharacter")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> DeleteCharacter(int id)
+    {
+        var deleteCharacterCommand = new DeleteCharacterCommand() { Id = id };
+        await _mediator.Send(deleteCharacterCommand);
+        return NoContent();
     }
 }
